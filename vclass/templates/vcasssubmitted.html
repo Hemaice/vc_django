@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Classroom - Assignment Submitted</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:  #979595;
+        }
+
+        header {
+            background-color: #575859;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 2rem;
+        }
+
+        .submission-card {
+            border: 1px solid #ccc;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+        }
+
+        .submission-card h2 {
+            margin-top: 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Virtual Classroom</h1>
+        <p>Welcome to our online learning platform</p>
+    </header>
+
+    <div class="container">
+        <div class="submission-card">
+            <h2>Math Assignment Submitted</h2>
+            <p>Your assignment on algebra has been successfully submitted.</p>
+        </div>
+
+        <div class="submission-card">
+            <h2>Science Assignment Submitted</h2>
+            <p>Your assignment on science experiments has been successfully submitted.</p>
+        </div>
+        {% csrf_token %}
+        <a href="{% url 'vccourse' %}" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html>

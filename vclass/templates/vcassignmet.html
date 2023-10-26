@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Classroom - Assignment Assigned</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:  #979595;
+        }
+
+        header {
+            background-color: #575859;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 2rem;
+        }
+
+        .assignment-card {
+            border: 1px solid #ccc;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+        }
+
+        .assignment-card h2 {
+            margin-top: 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Virtual Classroom</h1>
+        <p>Welcome to our online learning platform</p>
+    </header>
+
+    <div class="container">
+        <div class="assignment-card">
+            <h2>Devops Assignment</h2>
+            <p>An assignment on django has been assigned. The deadline is two months from now.</p>
+            <a href="{% url 'vcuploadfile' %}">Submit Assignment</a>
+        </div>
+
+        <div class="assignment-card">
+            <h2>Deep Learning Assignment</h2>
+            <p>Take your own dataset and perform regression and classification through Keras and also perform feed forward neural network for any dataset.</p>
+            <a href="{% url 'vcuploadfile' %}">Submit Assignment</a>
+        </div>
+
+        <div class="assignment-card">
+            <h2>Mathematical Optimization Technique Assignment</h2>
+            <p>The questions has been already sent to your respective mail ID.Check it out.And apply all Optimization Technique and describe which technique is most suited for your data.</p>
+            <a href="{% url 'vcuploadfile' %}">Submit Assignment</a>
+        </div>
+        <a href="{% url 'vcgetstart' %}" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html>

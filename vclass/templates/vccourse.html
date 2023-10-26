@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Classroom - Course</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #979595;
+        }
+
+        header {
+            background-color: #575859;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 2rem;
+        }
+
+        .course-content {
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .course-content h2 {
+            margin-top: 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Virtual Classroom</h1>
+        <marquee>Welcome to our online learning platform</marquee>
+    </header>
+
+    <div class="container">
+        <div class="course-content">
+            <h2>Devops Course</h2>
+            <p>This course will help you strengthen your skills.Backend frameworks will be learned here.</p>
+            <a href="{% url 'vcassignmet' %}" class="back-link">Take a assignment.</a>
+        </div>
+
+        <div class="course-content">
+            <h2>Deep Learning Course</h2>
+            <p>Explore the fascinating world of DL through interactive experiments and discussions.</p>
+            <a href="{% url 'vcassignmet' %}" class="back-link">Take a assignment.</a>
+        </div>
+       
+        <div class="course-content">
+            <h2>Mathematical Optimization Technique Course</h2>
+            <p>This course will help you strengthen your math optimization skills and problem-solving abilities.</p>
+            <a href="{% url 'vcassignmet' %}" class="back-link">Take a assignment.</a>
+        </div>
+
+        <a href="{% url 'vchome' %}" class="back-link">Back to Home</a>
+    </div>
+
+</body>
+</html>

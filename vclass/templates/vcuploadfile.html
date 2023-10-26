@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Classroom - Assignment Submitted</title>
+    <style>
+          body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:  #979595;
+        }
+
+        header {
+            background-color: #575859;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 2rem;
+        }
+
+        .upload-form {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .upload-form label {
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .upload-form input[type="file"] {
+            display: none;
+        }
+
+        .upload-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .upload-button:hover {
+            background-color: #0056b3;
+        }
+
+        .pdf-container {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ccc;
+            margin-top: 2rem;
+        }
+
+        .pdf-object {
+            width: 100%;
+            height: 500px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .success-message {
+            color: green;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Virtual Classroom</h1>
+        <p>Welcome to our online learning platform</p>
+    </header>
+
+    <div class="container">
+        <h2>Submit Assignment</h2>
+        <div class="upload-form">
+            <label for="assignmentFile">Choose a PDF file to upload:</label>
+            <input type="file" id="assignmentFile" accept=".pdf">
+            <button class="upload-button" onclick="uploadAssignment()">Upload Assignment</button>
+        </div>
+        <div class="pdf-container" id="pdfContainer" style="display: none;">
+            <object id="embeddedPDF" class="pdf-object" type="application/pdf"></object>
+        </div>
+        <div class="success-message" id="successMessage" style="display: none;">
+            Assignment uploaded successfully!
+        </div>
+        <a href="{% url 'vcasssubmitted' %}" class="back-link">Check file is uploaded.</a>
+    </div>
+
+    <script>
+        function uploadAssignment() {
+            // Placeholder function for handling file upload (backend logic needed)
+            // For demonstration, after "uploading," we'll show the PDF in the embedded viewer
+            const fileInput = document.getElementById("assignmentFile");
+            const embeddedPDF = document.getElementById("embeddedPDF");
+            const pdfContainer = document.getElementById("pdfContainer");
+            const successMessage = document.getElementById("successMessage");
+            
+            const selectedFile = fileInput.files[0];
+            if (selectedFile) {
+                embeddedPDF.data = URL.createObjectURL(selectedFile);
+                pdfContainer.style.display = "block";
+                successMessage.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
